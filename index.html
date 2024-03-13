@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="sp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <title>Árbol AVL</title>
+
+
+     <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <!-- iconos de bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+
+    <!-- sidebar -->
+    <link rel="stylesheet" href="./CSS/style.css" />
+
+</head>
+<body style="background-color: #212529">
+    <nav class="navbar  py-2" style="background-color: black;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#" style="color: azure; font-size: 25px;">
+            <img src="./static/nodo.png" alt="Logo" width="45" height="38" class="d-inline-block align-text-center style="margin-right: 10px;">
+            AVL Tree
+          </a>
+        </div>
+      </nav>
+
+      <div>
+        <div class="container-fluid">
+    <div class="row" style="height: 100%">
+        <div class="col-sm-auto sticky-top" style="height: 89vh; background-color: black">
+            <ul
+                class="nav nav-pills nav-flush flex-column flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center justify-content-between w-100 py-4 px-1 align-items-center">
+                <li class="nav-item">
+                    <button id="btnInsert" class="nav-link py-3 px-2 option-btn" title="" data-option="insert"
+                        data-bs-placement="right" data-bs-original-title="Insert" onclick="optionButton('btnInsert')">
+                        <i id="i-insert" title="Insert node" class="bi bi-plus-circle fs-3"></i>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button id="btnRemove" class="nav-link py-3 px-2 option-btn" title="" data-option="remove"
+                        data-bs-placement="right" data-bs-original-title="Remove" onclick="optionButton('btnRemove')">
+                        <i id="i-remove" title="Remove node" class="bi bi-x-circle fs-3"></i>
+                    </button>
+                </li>
+                <li id="li-search" class="nav-item">
+                    <button id="btnSearch" class="nav-link py-3 px-2 option-btn" title="" data-option="search"
+                        data-bs-placement="right" data-bs-original-title="Search" onclick="optionButton('btnSearch')">
+                        <i id="i-search" title="Search node" class="bi bi-search fs-3"></i>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button id="btnTransverse" class="nav-link py-3 px-2" title="" data-option="transverse"
+                        data-bs-placement="right" data-bs-original-title="Transverse"
+                        onclick="optionButton('btnTransverse')">
+                        <i id="i-transverse" title="Transverse" class="bi bi-diagram-2 fs-3"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm p-2 controls-container tree-container" >
+            <!-- content -->
+            <!-- <h1 style="font-size: 90px;">holi</h1> -->
+            <svg id="svg-tree" width="100%" height="100%" style="background-color: #212529">
+                    <linearGradient id="colorGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#F57120" />
+                      <stop offset="100%" stop-color="#F57120" />
+                    </linearGradient>
+            </svg>
+            <div id="controlsContainer" class="" style="background-color: blueviolet">
+                <div id="insertControls" class="controls" style="display: none">
+                    <input type="text" data-option="insert" maxlength="3" class="textbox" id="nodeValue" placeholder="Node value"/>
+                    <button class="boton" onclick="insertNode()">Go</button>
+                    <div id="error-message-insert" class="error-message"></div>
+                </div>
+                <div id="removeControls" class="controls" style="display: none">
+                    <!-- Controles adicionales para la opción 'Remove' -->
+                    
+                    <input maxlength="3" type="text" data-option="remove" class="textbox" id="nodeValueRemove" placeholder="Node value rem" />
+                    <button class="boton" onclick="removeNode()">Go</button>
+                    <div id="error-message-remove" class="error-message"></div>
+                </div>
+                <div id="searchControls" class="controls" style="display: none">
+                    <!-- Controles adicionales para la opción 'Search' -->
+                    <input maxlength="3" type="text" data-option="search" class="textbox" id="nodeValueSearch" placeholder="Node value sea" />
+                    <button class="boton" onclick="searchNode()">Go</button>
+                    <div id="error-message-search" class="error-message"></div>
+                </div>
+                <div id="transverseControls" class="controls" style="display: none">
+                    <!-- Controles adicionales para la opción 'Transverse' -->
+                    <button class="boton" onclick="preorden()">Preorder</button>
+                    <button class="boton" onclick="inorden()">Inorder</button>
+                    <button class="boton" onclick="postorden()">Postorder</button>
+                </div>
+            </div>
+            <div id="divInfo" class="controls">
+                <h1 id="tituloInfo"></h1>
+                <div id="divInfo2" class="info">
+                    <p id="infoText"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/animejs"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="./JS/avl_tree.js"></script>
+    <script src="./JS/sidebar.js"></script>
+
+
+</div>
+      </div>
+</body>
+</html>

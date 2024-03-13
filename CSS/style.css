@@ -1,0 +1,158 @@
+/* Estilos para el contenedor de los controles adicionales */
+.controls-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start; /* Alinea los controles en la parte superior */
+  justify-content: flex-start; 
+}
+
+/* Estilos para cada conjunto de controles */
+.controls {
+  position: absolute;
+  /* top: 75px; */
+  left: 0px;
+  z-index: 10;
+  display: none;
+  margin-left: 2px; /* Espacio entre cada conjunto de controles */
+  /* align-self: flex-start; Alinea el conjunto de controles en la parte superior */
+  /* background-color: red; */
+}
+
+#divInfo{
+  position: absolute;
+  z-index: 10;
+  background-color:darkslategrey;
+  width: 28%; /* 28% */
+  height: 20%; /* 20% */
+  height: auto;
+  display: none;
+  /* margin-left: 2px; Espacio entre cada conjunto de controles */
+  top: 60%; /* 75% */
+  left: 70%; /* 70% */
+}
+
+#tituloInfo{
+  font-size: 25px;
+  color: azure;
+  text-align: center;
+}
+
+.info{
+  font-size: 17px;
+  color: #B7B8C3; /*  B7B8C3 */
+  text-align: center;
+}
+
+.textbox {
+  width: 100px;
+  margin-right: 5px;
+  border: solid 0px;
+  border-radius: 7px;
+  font-size: 15px;
+  background-color: black;
+  color: azure;
+  
+  /* margin-right: 2px; */
+}
+
+.textbox:focus {
+  outline: none;
+}
+
+.boton {
+  border: solid 2px;
+  border-color: dodgerblue;
+  border-radius: 5px;
+  margin-right: 5px;
+  background-color: rgb(0, 0, 0);
+  color: dodgerblue;
+}
+
+.boton:hover {
+  border-color: black;
+  background-color: dodgerblue;
+  color: black;
+}
+
+.boton:active {
+  border-color: dodgerblue;
+  background-color: dodgerblue;
+  color: black;
+}
+
+/* Estilos para el contenedor de los botones de la barra lateral */
+.nav-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Estilos para cada botón de la barra lateral */
+.option-btn {
+  margin-bottom: 64px; /* Espacio entre los botones */
+}
+
+
+/* estilos para los botones de la sidebar */
+#i-insert {
+  color: rgb(61, 177, 51);  
+}
+#btnInsert:hover #i-insert {
+  color: rgb(80, 230, 67);
+}
+
+/* cambiar el color del icono de 'remove' */
+#i-remove {
+  color: rgb(220, 32, 32);  
+}
+/* cambiar el color del icono cuando se hace hover sobre el btn */
+#btnRemove:hover  #i-remove {
+  color: rgb(250, 62, 62);
+}
+
+#i-search {
+  /* color:  rgb(59, 56, 246);  */
+  color:  rgb(56, 54, 185); 
+}
+#btnSearch:hover #i-search {
+  /* color: rgb(88, 128, 245); */
+  color: rgb(0, 13, 255);
+}
+
+#i-transverse {
+  color:  rgb(186, 201, 15); 
+}
+#btnTransverse:hover #i-transverse {
+  color: rgb(243, 239, 106);
+}
+
+.error-message {
+  color: red;
+}
+
+.sidebar-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Establece la altura del 100% del viewport */
+  justify-content: space-between;
+}
+
+#colorGradient {
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-dasharray: 500; /* Longitud total de la línea */
+  stroke-dashoffset: 500; /* Inicialmente fuera de la vista */
+  animation: animateGradient 3s linear infinite; /* Duración de la animación */
+}
+
+
+@keyframes animateGradient {
+  0% {
+    stroke-dashoffset: 500; /* Comienza fuera de la vista */
+  }
+  100% {
+    stroke-dashoffset: 0; /* Viaja hasta el final de la línea */
+  }
+}
+/* recuerda cambiar la fuente please */
